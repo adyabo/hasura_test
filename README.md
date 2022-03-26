@@ -1,0 +1,1 @@
+# memo-app-sample-hasura
