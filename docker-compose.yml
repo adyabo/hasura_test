@@ -23,6 +23,7 @@ services:
         - DB_PORT=${POSTGRES_PORT}
         - DB_DATABASE=${POSTGRES_DB}
         - HASURA_ADMIN_SECRET=${HASURA_ADMIN_SECRET}
+        - HASURA_JWT_SECRET=${HASURA_JWT_SECRET}
     restart: always
     depends_on:
       - postgres
