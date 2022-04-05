@@ -1,10 +1,56 @@
 table:
   name: memo
   schema: public
+object_relationships:
+- name: user
+  using:
+    foreign_key_constraint_on: userId
+insert_permissions:
+- permission:
+    backend_only: false
+    check:
+      user:
+        uid:
+          _eq: X-Hasura-User-Id
+    columns:
+    - id
+    - userId
+    - memo
+  role: user
 select_permissions:
 - permission:
     columns:
     - id
     - memo
+    - userId
     filter: {}
+  role: anonymous
+- permission:
+    columns:
+    - id
+    - memo
+    - userId
+    filter: {}
+  role: user
+update_permissions:
+- permission:
+    check:
+      user:
+        uid:
+          _eq: X-Hasura-User-Id
+    columns:
+    - id
+    - userId
+    - memo
+    filter:
+      user:
+        uid:
+          _eq: X-Hasura-User-Id
+  role: user
+delete_permissions:
+- permission:
+    filter:
+      user:
+        uid:
+          _eq: X-Hasura-User-Id
   role: user

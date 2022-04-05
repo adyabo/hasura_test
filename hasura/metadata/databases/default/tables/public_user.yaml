@@ -1,3 +1,21 @@
 table:
   name: user
   schema: public
+array_relationships:
+- name: memos
+  using:
+    foreign_key_constraint_on:
+      column: userId
+      table:
+        name: memo
+        schema: public
+select_permissions:
+- permission:
+    columns:
+    - id
+    - uid
+    - name
+    filter:
+      uid:
+        _eq: X-Hasura-User-Id
+  role: user
