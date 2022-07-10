@@ -1,4 +1,3 @@
-# FROM hasura/graphql-engine:v2.3.1
 FROM hasura/graphql-engine:v2.3.1.cli-migrations-v3
 
 # Dockerfileに渡す変数

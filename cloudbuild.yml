@@ -48,12 +48,12 @@ options:
   substitutionOption: ALLOW_LOOSE
 substitutions:
   _PLATFORM: managed
-  _SERVICE_NAME: memo-app-sample-hasura
+  _SERVICE_NAME: test
   _DEPLOY_REGION: asia-northeast1
-  _LABELS: gcb-trigger-id=64127dab-1c2d-43db-90a1-b34028285cde
-  _TRIGGER_ID: 64127dab-1c2d-43db-90a1-b34028285cde
   _GCR_HOSTNAME: asia.gcr.io
+  _LABELS: gcb-trigger-id=228d2113-0013-47fe-9dd7-7130e6bcc7b7
+  _TRIGGER_ID: 228d2113-0013-47fe-9dd7-7130e6bcc7b7
 tags:
   - gcp-cloud-build-deploy-cloud-run
   - gcp-cloud-build-deploy-cloud-run-managed
-  - memo-app-sample-hasura
+  - test
