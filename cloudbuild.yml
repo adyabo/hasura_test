@@ -14,8 +14,6 @@ steps:
       - "DB_DATABASE=$_DB_DATABASE"
       - "--build-arg"
       - "HASURA_ADMIN_SECRET=$_HASURA_ADMIN_SECRET"
-      - "--build-arg"
-      - "HASURA_JWT_SECRET=$_HASURA_JWT_SECRET"
       - '--no-cache'
       - '-t'
       - '$_GCR_HOSTNAME/$PROJECT_ID/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA'
@@ -47,13 +45,13 @@ images:
 options:
   substitutionOption: ALLOW_LOOSE
 substitutions:
-  _PLATFORM: managed
-  _SERVICE_NAME: test
+  _TRIGGER_ID: bbf62d78-5f13-4b9b-ab14-934e2a2c16ea
   _DEPLOY_REGION: asia-northeast1
   _GCR_HOSTNAME: asia.gcr.io
-  _LABELS: gcb-trigger-id=228d2113-0013-47fe-9dd7-7130e6bcc7b7
-  _TRIGGER_ID: 228d2113-0013-47fe-9dd7-7130e6bcc7b7
+  _PLATFORM: managed
+  _SERVICE_NAME: testes
+  _LABELS: gcb-trigger-id=bbf62d78-5f13-4b9b-ab14-934e2a2c16ea
 tags:
   - gcp-cloud-build-deploy-cloud-run
   - gcp-cloud-build-deploy-cloud-run-managed
-  - test
+  - testes
