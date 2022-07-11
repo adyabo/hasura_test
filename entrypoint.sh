@@ -34,3 +34,6 @@ wait_for_port() {
 
 # wait for port to be ready
 wait_for_port $HASURA_GRAPHQL_SERVER_PORT
+
+log "Starting graphql engine on port $HASURA_GRAPHQL_SERVER_PORT"
+exec graphql-engine serve
